@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Service
 import android.content.Intent
 import android.graphics.PixelFormat
+import android.media.MediaPlayer
 import android.os.Build
 import android.os.IBinder
 import android.view.LayoutInflater
@@ -61,6 +62,8 @@ open class FloatingViewService : Service(), View.OnClickListener {
         btn_card_photo.setOnClickListener {
             val intent = Intent(this, Screen::class.java)
             startActivity(intent)
+            val player = MediaPlayer.create(this, R.raw.photo_sound)
+            player.start()
         }
 
         btn_card_menu.setOnClickListener {
