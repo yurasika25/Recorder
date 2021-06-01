@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">RecorderApp</string>
+    <string name="media">Media</string>
+    <string name="control_panel">Control panel</string>
+    <string name="output_folder">Output Folder</string>
+    <string name="output_folder_output_folder">/Output/Folder/Output/Folder</string>
+    <string name="recorder">Recorder</string>
+    <string name="horizontal_position">Horizontal Position</string>
+    <string name="right">Right</string>
+    <string name="vertical_position">Vertical Position</string>
+    <string name="video_size">Video Size</string>
+    <string name="_720p">720P</string>
+    <string name="audio_recording">Audio Recording</string>
+    <string name="on">On</string>
+    <string name="stop_with">Stop with</string>
+    <string name="notification_tap_power_button_device_shake">Notification Tap / Power Button / Device Shake</string>
+    <string name="top">Top</string>
+    <string name="todo">TODO</string>
+</resources>
