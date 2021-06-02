@@ -3,14 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/activity_main_screen.xml" value="0.25" />
+        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/drawable/ic_send.xml" value="0.15034722222222222" />
+        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/activity_enter.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/activity_main.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/activity_main_screen.xml" value="0.13958333333333334" />
         <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/class_two.xml" value="0.1" />
-        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/fragment_media.xml" value="0.16" />
-        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/layout_activity_widget.xml" value="0.22" />
+        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/fragment_media.xml" value="0.209375" />
+        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/layout_activity_widget.xml" value="0.209375" />
         <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/name.xml" value="0.18981481481481483" />
         <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/test.xml" value="0.20615384615384616" />
-        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/video_recorder.xml" value="0.20615384615384616" />
+        <entry key="..\:/Users/krist/RecorderApp/app/src/main/res/layout/video_recorder.xml" value="0.16" />
       </map>
     </option>
   </component>

@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.recorderapp.R
+import com.example.recorderapp.constants.Constants
 import com.example.recorderapp.media.MediaFragment
 import com.example.recorderapp.service.FloatingViewService
 
@@ -17,7 +18,7 @@ class EnterActivity : AppCompatActivity(), EnterView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.class_two)
+        setContentView(R.layout.activity_enter)
         presenter = EnterPresenter()
     }
 
@@ -40,7 +41,7 @@ class EnterActivity : AppCompatActivity(), EnterView {
             Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
             Uri.parse("package:$packageName")
         )
-        startActivityForResult(intent, SYSTEM_ALERT_WINDOW_PERMISSION)
+        startActivityForResult(intent, Constants.SYSTEM_ALERT_WINDOW_PERMISSION)
     }
 
     private fun onClick() {
@@ -57,9 +58,6 @@ class EnterActivity : AppCompatActivity(), EnterView {
         }
     }
 
-    companion object {
-        private const val SYSTEM_ALERT_WINDOW_PERMISSION = 2084
-    }
 
     override fun goToMainFragment() {
         val fragment: Fragment = MediaFragment.newInstance()

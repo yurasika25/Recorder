@@ -13,7 +13,6 @@ import com.example.recorderapp.dialogs.PositionDialogFragmentVertical
 
 class MediaFragment : Fragment(), MediaFragmentView {
 
-
     private var presenter: MediaFragmentPresenter? = null
 
     companion object {

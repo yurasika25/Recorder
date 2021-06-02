@@ -16,15 +16,14 @@ class DialogStopWith : DialogFragment() {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
             builder.setTitle("Stop with")
-                .setMultiChoiceItems(catNames, checkedItems) { dialog, which, isChecked ->
+                .setMultiChoiceItems(catNames, checkedItems) { _, which, isChecked ->
                     checkedItems[which] = isChecked
-                    val name = catNames[which] // Get the clicked item
+                    val name = catNames[which]
                     Toast.makeText(activity, name, Toast.LENGTH_LONG).show()
                 }
                 .setPositiveButton(
                     "OK"
-                ) { dialog, id ->
-                    // User clicked OK, so save the selectedItems results somewhere
+                ) { _, _ ->
                     for (i in catNames.indices) {
                         val checked = checkedItems[i]
                         if (checked) {

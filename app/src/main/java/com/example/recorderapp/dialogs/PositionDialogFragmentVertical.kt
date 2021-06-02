@@ -5,10 +5,9 @@ import android.app.Dialog
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.example.recorderapp.constants.Constants
 
 class PositionDialogFragmentVertical : DialogFragment() {
-
-    private val items = arrayOf("Top", "Center", "Bottom")
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
@@ -17,16 +16,16 @@ class PositionDialogFragmentVertical : DialogFragment() {
             val builder = AlertDialog.Builder(it)
             builder.setTitle("Vertical Position")
                 .setSingleChoiceItems(
-                    items, -1
-                ) { dialog, item ->
+                    Constants.items_position_vertical, -1
+                ) { _, item ->
                     Toast.makeText(
-                        activity, "Select:  ${items[item]}",
+                        activity, "Select:  ${Constants.items_position_vertical[item]}",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
                 .setPositiveButton(
                     "OK"
-                ) { dialog, id ->
+                ) { _, _ ->
                 }
 
             builder.create()

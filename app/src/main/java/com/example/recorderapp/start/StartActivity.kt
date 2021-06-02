@@ -3,11 +3,10 @@ package com.example.recorderapp.start
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
-import com.example.recorderapp.R
+import com.example.recorderapp.constants.Constants
 import com.example.recorderapp.service.FloatingViewService
 
 class StartActivity : Activity() {
@@ -25,7 +24,7 @@ class StartActivity : Activity() {
             Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
             Uri.parse("package:$packageName")
         )
-        startActivityForResult(intent, SYSTEM_ALERT_WINDOW_PERMISSION)
+        startActivityForResult(intent, Constants.SYSTEM_ALERT_WINDOW_PERMISSION)
     }
 
     private fun onClick() {
@@ -40,9 +39,5 @@ class StartActivity : Activity() {
                 Toast.LENGTH_SHORT
             ).show()
         }
-    }
-
-    companion object {
-        private const val SYSTEM_ALERT_WINDOW_PERMISSION = 2084
     }
 }

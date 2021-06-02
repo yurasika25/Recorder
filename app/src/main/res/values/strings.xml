@@ -16,4 +16,7 @@
     <string name="notification_tap_power_button_device_shake">Notification Tap / Power Button / Device Shake</string>
     <string name="top">Top</string>
     <string name="todo">TODO</string>
+    <string name="start">start</string>
+    <string name="stop">stop</string>
+    <string name="record">Record</string>
 </resources>

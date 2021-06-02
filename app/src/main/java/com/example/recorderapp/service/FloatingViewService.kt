@@ -13,26 +13,27 @@ import android.view.View
 import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import com.example.recorderapp.R
+import com.example.recorderapp.video.Recorder
 import com.example.recorderapp.main.EnterActivity
 import com.example.recorderapp.screenshot.Screen
-import com.example.recorderapp.video.VideoRecorder
 
 open class FloatingViewService : Service(), View.OnClickListener {
 
     private var mWindowManager: WindowManager? = null
 
     private lateinit var mFloatingView: View
-    private var kapali_widget: View? = null
-    private lateinit var acik_widget: View
-    open lateinit var btn_card_photo: View
-    private lateinit var btn_card_video: View
-    private lateinit var btn_card_menu: View
-    private lateinit var relativeL: View
+    private var widget: View? = null
+    private lateinit var layoutExpandedWidget: View
+    open lateinit var btnCardPhoto: View
+    private lateinit var btnCardVideo: View
+    private lateinit var btnCardMenu: View
+    private lateinit var relativeLayout: View
 
     override fun onBind(intent: Intent): IBinder? {
         return null
     }
 
+    @SuppressLint("InflateParams")
     @RequiresApi(api = Build.VERSION_CODES.O)
     override fun onCreate() {
         super.onCreate()
@@ -49,32 +50,33 @@ open class FloatingViewService : Service(), View.OnClickListener {
         mWindowManager = getSystemService(WINDOW_SERVICE) as WindowManager
         mWindowManager!!.addView(mFloatingView, params)
 
-        kapali_widget = mFloatingView.findViewById(R.id.layoutCollapsed)
-        acik_widget = mFloatingView.findViewById(R.id.layoutExpanded)
-        btn_card_photo = mFloatingView.findViewById(R.id.id_card_photo)
-        btn_card_video = mFloatingView.findViewById(R.id.id_card_video)
-        btn_card_menu = mFloatingView.findViewById(R.id.id_card_menu)
-        relativeL = mFloatingView.findViewById(R.id.relativeLayoutParent)
+        widget = mFloatingView.findViewById(R.id.layoutCollapsed)
+        layoutExpandedWidget = mFloatingView.findViewById(R.id.layoutExpanded)
+        btnCardPhoto = mFloatingView.findViewById(R.id.id_card_photo)
+        btnCardVideo = mFloatingView.findViewById(R.id.id_card_video)
+        btnCardMenu = mFloatingView.findViewById(R.id.id_card_menu)
+        relativeLayout = mFloatingView.findViewById(R.id.relativeLayoutParent)
 
         mFloatingView.findViewById<View>(R.id.buttonClose).setOnClickListener(this)
-        acik_widget.setOnClickListener(this)
+        layoutExpandedWidget.setOnClickListener(this)
 
-        btn_card_photo.setOnClickListener {
+        btnCardPhoto.setOnClickListener {
             val intent = Intent(this, Screen::class.java)
             startActivity(intent)
             val player = MediaPlayer.create(this, R.raw.photo_sound)
             player.start()
         }
 
-        btn_card_menu.setOnClickListener {
+        btnCardMenu.setOnClickListener {
             val intent = Intent(this, EnterActivity::class.java)
             startActivity(intent)
             stopSelf()
         }
 
-        btn_card_video.setOnClickListener {
-            val intent = Intent(this, VideoRecorder::class.java)
+        btnCardVideo.setOnClickListener {
+            val intent = Intent(this, Recorder::class.java)
             startActivity(intent)
+            layoutExpandedWidget.visibility = View.GONE
         }
 
         mFloatingView.findViewById<View>(R.id.relativeLayoutParent)
@@ -95,7 +97,7 @@ open class FloatingViewService : Service(), View.OnClickListener {
                             return true
                         }
                         MotionEvent.ACTION_UP -> {
-                            acik_widget.setVisibility(View.VISIBLE)
+                            layoutExpandedWidget.visibility = View.VISIBLE
                             return true
                         }
                         MotionEvent.ACTION_MOVE -> {
@@ -115,11 +117,10 @@ open class FloatingViewService : Service(), View.OnClickListener {
         mWindowManager!!.removeView(mFloatingView)
     }
 
-
     override fun onClick(v: View) {
         when (v.id) {
             R.id.layoutExpanded ->
-                acik_widget.visibility = View.GONE
+                layoutExpandedWidget.visibility = View.GONE
             R.id.buttonClose ->
                 stopSelf()
         }

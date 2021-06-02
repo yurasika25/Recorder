@@ -16,8 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="Screen Recorder" />
 
-
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -83,7 +81,6 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-
     </LinearLayout>
 
     <LinearLayout
@@ -113,7 +110,6 @@
     </LinearLayout>
 
 
-
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
@@ -132,7 +128,6 @@
         android:clickable="true"
         android:focusable="true">
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -150,7 +145,6 @@
         android:text="@string/top"/>
 
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -182,7 +176,6 @@
         android:clickable="true"
         android:focusable="true">
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -199,8 +192,6 @@
         android:text="@string/_720p"/>
 
     </LinearLayout>
-
-
 
     <View
         android:id="@+id/view3"
@@ -246,7 +237,6 @@
             />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -265,7 +255,6 @@
         android:clickable="true"
         android:focusable="true">
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -282,6 +271,4 @@
         android:text="@string/notification_tap_power_button_device_shake"/>
 
     </LinearLayout>
-
-
 </LinearLayout>

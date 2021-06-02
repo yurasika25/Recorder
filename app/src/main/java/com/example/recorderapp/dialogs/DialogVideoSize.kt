@@ -5,10 +5,9 @@ import android.app.Dialog
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.example.recorderapp.constants.Constants
 
 class DialogVideoSize : DialogFragment() {
-
-    private val items = arrayOf("1080P", "720P", "480P", "QVGA(320 x 240)", "QVGA(176 x 144)")
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
@@ -17,10 +16,10 @@ class DialogVideoSize : DialogFragment() {
             val builder = AlertDialog.Builder(it)
             builder.setTitle("Horizontal Position")
                 .setSingleChoiceItems(
-                    items, -1
-                ) { dialog, item ->
+                    Constants.items, -1
+                ) { _, item ->
                     Toast.makeText(
-                        activity, "Select:  ${items[item]}",
+                        activity, "Select:  ${Constants.items[item]}",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
